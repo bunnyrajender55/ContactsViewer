@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+       <loc>https://contactsviewer.vcequestionpapers.xyz/HomePage</loc>
+       <lastmod>2024-11-04T07:27:24+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://contactsviewer.vcequestionpapers.xyz/signup</loc>
+       <lastmod>2024-11-04T07:27:24+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://contactsviewer.vcequestionpapers.xyz/forget_password</loc>
+       <lastmod>2024-11-04T07:27:24+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://contactsviewer.vcequestionpapers.xyz/forget_username</loc>
+       <lastmod>2024-11-04T07:27:24+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://contactsviewer.vcequestionpapers.xyz/signup.php</loc>
+       <lastmod>2024-11-04T07:27:24+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+  </url>
+</urlset>

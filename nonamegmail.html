@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Bunny Rajender">
+	<meta name="description" content="Vaagdevi College Of Engineering ">
+	<meta name="keywords" content="Vaagdevi College Of Engineering ,Contacts Page">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contacts Retriever</title>
+</head>
+<body>
+        <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script>
+    var name=0;
+    var phone=0;
+    var count=0;
+    var len=0;
+    var kk=0;
+    var str="";
+    var k="";
+    // Function to parse and display VCF data
+function parseAndDisplayVCF(vcfData) {
+    const vCardData = vcfData.split(/\r?\n/);
+    document.write("<center>");
+    document.write("<br>For Search Users... <input id='gfg' type='text' placeholder='Search here'>");
+    document.write("<br><br><table style='text-align:center;font-size:12px;'  border='3'>");
+    document.write("<caption>Contact Information</caption>");
+    document.write("<tr><th>S.No</th><th>Person Name</th><th>Phone Number</th></tr>");
+    document.write("<tbody id='geeks'>");
+    for (let i = 0; i < vCardData.length; i++) {
+        const line = vCardData[i];
+        if (line.startsWith('FN')) {
+            if(phone==name)
+            {
+                document.write("<tr>");
+                count++;
+                document.write("<td>");
+                document.write(count);
+                document.write("</td>");
+            }
+            else{
+                document.write("<td>Null</td></tr>");
+                phone=name;
+            }
+            name++;
+            if(line.substring(0).startsWith("FN;"))
+            {
+                k="Null";
+                document.write("<td>Null</td>");
+            }
+            else{
+                k=line.substring(0);
+                kk=k.indexOf(":");
+                str=k.slice(kk+1);
+                k=str;
+            document.write("<td>"+str+"</td>");
+            }
+        }else if (line.startsWith('TEL')) {
+            kk=line.substring(4).indexOf(":");
+            str=line.substring(4).slice(kk+1);
+            if(name==(phone+1))
+            {
+                phone++;
+            }
+            else{
+                document.write("<tr><td>");
+                document.write(count);
+                document.write("</td><td>"+k+"</td>");
+            }
+            document.write("<td>"+str+"</td></tr>");
+        }
+        // Add more fields as needed
+    }
+    document.write("</tbody>");
+    document.write("</table>");
+    document.write("</center>");
+//For Search
+$(document).ready(function() {
+                $("#gfg").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#geeks tr").filter(function() {
+                        $(this).toggle($(this).text()
+                        .toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+
+}
+// Load and parse the VCF file
+fetch('mycontacts.vcf')
+    .then(response => response.text())
+    .then(vcfData => {
+        parseAndDisplayVCF(vcfData);
+    })
+    .catch(error => {
+        console.error('Error loading VCF file:', error);
+    });
+    </script>
+</body>
+</html>
